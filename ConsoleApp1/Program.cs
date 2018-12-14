@@ -23,16 +23,14 @@ namespace ConsoleApp1
 			var offset = timeZoneInfo.BaseUtcOffset;
 			var id = TimeZoneInfo.Local.Id;
 			var name = timeZoneInfo.StandardName;
-			var UTC = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
-			var PTime = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTimeOffset
-				dateTimeOffset,UTC);
+			var PacificTime = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
 
 
 			Console.WriteLine(timeZoneInfo);
 			Console.WriteLine(offset);
 			Console.WriteLine(id);
 			Console.WriteLine(name);
-			Console.WriteLine(UTC);
+			Console.WriteLine(PacificTime);
 
 			/*
 			 * (UTC+09:00) 大阪、札幌、東京 
