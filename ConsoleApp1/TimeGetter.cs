@@ -1,22 +1,9 @@
 ﻿using System;
 using System.Timers;
 
-class MainClass
+class TimeGetter
 {
-	Tester tester;
-
-
-	static void Main(string[] args)
-	{
-		Tester tester = new Tester();
-		
-		//Program.GetTimeZone();
-		Console.WriteLine(tester.Sender());
-		//	Program.Alarm();
-		MainClass.End();
-	}
-
-	static void GetTimeZone()
+	public void GetTimeZone()
 	{
 		TimeZoneInfo timeZoneInfo = TimeZoneInfo.Local;
 		var offset = timeZoneInfo.BaseUtcOffset;
@@ -37,18 +24,8 @@ class MainClass
 		 * Tokyo Standard Time
 		 * 東京 (標準時)
 		 */
-
 	}
-
-
-	//Don't go out console Merhod
-	static void End()
-	{
-		Console.Write("Press any key to continue...");
-		Console.ReadKey(true);
-	}
-
-	static void Alarm()
+	public void Alarm()
 	{
 		//Entering the alarm time
 		Console.WriteLine("Entering the alarm time");
@@ -111,7 +88,7 @@ class MainClass
 	}
 
 	//Show the time of now
-	static void Showtime()
+	public void Showtime()
 	{
 		Console.WriteLine("Hello!!");
 
