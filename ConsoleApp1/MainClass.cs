@@ -1,23 +1,38 @@
 ﻿using System;
 
-class MainClass
+partial class MainClass
 {
+	static void Main(string[] args) { Start(); }
 
-	static void Main(string[] args)
+	/// <summary>
+	/// Project start here.
+	/// </summary>
+	static void Start()
 	{
 		//Timers();
 
 		End();
 	}
 
-	//Don't go out console Merhod
+	#region BasicMethods
+	/// <summary>
+	/// Don't go out console Method.
+	/// </summary>
 	static void End()
 	{
 		Console.Write("Press any key to continue...");
 		Console.ReadKey(true);
 	}
 
+	static void AskYesNo()
+	{
+		Console.WriteLine("If you wanna end, Press y and Enter.");
+		while (Console.ReadKey(true).Key != ConsoleKey.Enter) { }
+	}
+	#endregion
 
+
+	#region OtherMethods
 	static void Timers()
 	{
 		var timeGetter = new TimeGetter();
@@ -25,4 +40,5 @@ class MainClass
 		timeGetter.GetTimeZone();
 		timeGetter.Alarm();
 	}
+	#endregion
 }
