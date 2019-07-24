@@ -16,15 +16,15 @@ public class Delegaters
 		return sum;
 	}
 
-	TNum Sum<TNum>(IEnumerable<TNum> data, Predicate<TNum> predicate)
-	{
-		dynamic s;
+	//TNum Sum<TNum>(IEnumerable<TNum> data, Predicate<TNum> predicate)
+	//{
+	//	dynamic s;
 
-		foreach (var x in data)
-		{
-			if (predicate(x))
-				s += (dynamic)x;
-		}
-		return s;
-	}
+	//	foreach (var x in data)
+	//	{
+	//		if (predicate(x))
+	//			s += (dynamic)x;
+	//	}
+	//	return s;
+	//}
 }

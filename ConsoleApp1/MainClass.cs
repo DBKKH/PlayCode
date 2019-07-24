@@ -10,6 +10,7 @@ partial class MainClass
 	static void Start()
 	{
 		//Timers();
+		Unsafe();
 
 		End();
 	}
@@ -33,6 +34,12 @@ partial class MainClass
 
 
 	#region OtherMethods
+	static void Unsafe()
+	{
+		var u = new UnSafeFeild();
+		u.Output();
+	}
+
 	static void Timers()
 	{
 		var timeGetter = new TimeGetter();
