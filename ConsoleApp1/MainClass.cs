@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 
 partial class MainClass
-{
+{	
 	static void Main(string[] args) { Start(); }
 
 	/// <summary>
@@ -10,30 +11,43 @@ partial class MainClass
 	static void Start()
 	{
 		//Timers();
-		Unsafe();
 
-		End();
+		DelegatersMethod();
+
+		//Unsafe();
+
+		var b = new BasicMethods();
+		b.End();
 	}
-
-	#region BasicMethods
-	/// <summary>
-	/// Don't go out console Method.
-	/// </summary>
-	static void End()
-	{
-		Console.Write("Press any key to continue...");
-		Console.ReadKey(true);
-	}
-
-	static void AskYesNo()
-	{
-		Console.WriteLine("If you wanna end, Press y and Enter.");
-		while (Console.ReadKey(true).Key != ConsoleKey.Enter) { }
-	}
-	#endregion
-
 
 	#region OtherMethods
+	static void DelegatersMethod()
+	{
+		var d = new Delegaters();
+		var basic = new BasicMethods();
+		int[] data;
+		//List<int> dataList = new List<int>();
+
+		var text1 = basic.GetConsoleText("Input some text. Then show hash.");
+		var hash = text1.GetHashCode();
+		Console.WriteLine(hash); //synamon = -353814788
+
+		var text2 = basic.GetConsoleText("Input any number.");
+		if (text2.GetType() == typeof(int))
+		{
+			text2 = basic.GetConsoleText("Please input some number...");
+		}
+
+		var n = int.Parse(text2);
+		data = new int[n];
+
+		for(int i=0; i<n; i++)
+		{
+			data[i] = i;
+		}
+		Console.WriteLine(d.Sum(data, x => x % 2 == 0));
+	}
+
 	static void Unsafe()
 	{
 		var u = new UnSafeFeild();

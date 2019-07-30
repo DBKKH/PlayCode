@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 public class Delegaters
 {
-	Int16 Sum(IEnumerable<Int16> data, Predicate<int> predicate)
+	public int Sum(IEnumerable<int> data, Predicate<int> predicate)
 	{
-		Int16 sum = 0;
+		int sum = 0;
 		foreach (var x in data)
 		{
 			if (predicate(x))
