@@ -38,7 +38,7 @@ partial class MainClass
 			text2 = basic.GetConsoleText("Please input some number...");
 		}
 
-		var n = int.Parse(text2);
+		var n = int.Parse(text2) + 1;
 		data = new int[n];
 
 		for(int i=0; i<n; i++)
