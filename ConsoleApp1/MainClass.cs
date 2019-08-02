@@ -10,48 +10,34 @@ partial class MainClass
 	/// </summary>
 	static void Start()
 	{
-		//Timers();
+		//Unsafe();
 
 		DelegatersMethod();
 
-		//Unsafe();
+		//Timers();
 
 		var b = new BasicMethods();
 		b.End();
 	}
 
 	#region OtherMethods
-	static void DelegatersMethod()
-	{
-		var d = new Delegaters();
-		var basic = new BasicMethods();
-		int[] data;
-		//List<int> dataList = new List<int>();
-
-		var text1 = basic.GetConsoleText("Input some text. Then show hash.");
-		var hash = text1.GetHashCode();
-		Console.WriteLine(hash); //synamon = -353814788
-
-		var text2 = basic.GetConsoleText("Input any number.");
-		if (text2.GetType() == typeof(int))
-		{
-			text2 = basic.GetConsoleText("Please input some number...");
-		}
-
-		var n = int.Parse(text2) + 1;
-		data = new int[n];
-
-		for(int i=0; i<n; i++)
-		{
-			data[i] = i;
-		}
-		Console.WriteLine(d.Sum(data, x => x % 2 == 0));
-	}
 
 	static void Unsafe()
 	{
 		var u = new UnSafeFeild();
 		u.Output();
+	}
+
+	static void DelegatersMethod()
+	{
+		var d = new Delegaters();
+		d.CalucMethod();
+	}
+
+	static void Hasher()
+	{
+		var h = new HashVariation();
+		h.GetHash();
 	}
 
 	static void Timers()
