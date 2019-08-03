@@ -10,6 +10,8 @@ partial class MainClass
 	/// </summary>
 	static void Start()
 	{
+		CalcProgression();
+
 		//Unsafe();
 
 		DelegatersMethod();
@@ -21,7 +23,11 @@ partial class MainClass
 	}
 
 	#region OtherMethods
-
+	static void CalcProgression()
+	{
+		var ap = new ArithmeticProgression(90,90,out int result);
+		Console.WriteLine(result);
+	}
 	static void Unsafe()
 	{
 		var u = new UnSafeFeild();

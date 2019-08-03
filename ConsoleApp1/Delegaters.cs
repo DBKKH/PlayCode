@@ -55,7 +55,17 @@ class ArithmeticProgression
 	//a,l,n,d
 	int firstTerm, lastTerm, NumOfTerms, difference;
 
-	public ArithmeticProgression(int firstTerm, int lastTerm, int numOfTerms, int result)
+
+	public ArithmeticProgression(int lastTerm, int numOfTerms, out int result)
+	{
+		this.firstTerm = 0;
+		this.lastTerm = lastTerm;
+		this.NumOfTerms = numOfTerms;
+
+		result = SumToEnd();
+	}
+
+	public ArithmeticProgression(int firstTerm, int lastTerm, int numOfTerms, out int result)
 	{
 		this.firstTerm = firstTerm;
 		this.lastTerm = lastTerm;
@@ -64,14 +74,14 @@ class ArithmeticProgression
 		result = SumToEnd();
 	}
 
-	public ArithmeticProgression(int firstTerm, int numOfTerms, int difference, int result)
-	{
-		this.firstTerm = firstTerm;
-		this.NumOfTerms = numOfTerms;
-		this.difference = difference;
+	//public override ArithmeticProgression(int firstTerm, int numOfTerms, int difference, out int result)
+	//{
+	//	this.firstTerm = firstTerm;
+	//	this.NumOfTerms = numOfTerms;
+	//	this.difference = difference;
 
-		result = SumByDifference();
-	}
+	//	result = SumByDifference();
+	//}
 
 
 	public int SumToEnd()
