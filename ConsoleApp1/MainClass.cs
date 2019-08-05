@@ -10,11 +10,13 @@ partial class MainClass
 	/// </summary>
 	static void Start()
 	{
-		CalcProgression();
+		URItester();
+
+		//CalcProgression();
 
 		//Unsafe();
 
-		DelegatersMethod();
+		//DelegatersMethod();
 
 		//Timers();
 
@@ -23,9 +25,22 @@ partial class MainClass
 	}
 
 	#region OtherMethods
+	static void URItester()
+	{
+		var test = new TestURI("http://www.contoso.com/");
+		var b = new BasicMethods();
+		b.CalcTime(test.GetUriSystem);
+		b.CalcTime(test.GetUriString);
+	}
+
 	static void CalcProgression()
 	{
-		var ap = new ArithmeticProgression(90,90,out int result);
+		Console.WriteLine("Input number of last term in progression");
+		int last = int.Parse(Console.ReadLine());
+
+		var ap = new Progression(last, last, out int result);
+		Console.WriteLine(result);
+		result = ap.SumNotNum(0, 90, 1);
 		Console.WriteLine(result);
 	}
 	static void Unsafe()

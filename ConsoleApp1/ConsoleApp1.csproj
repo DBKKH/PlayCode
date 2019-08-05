@@ -47,7 +47,9 @@
     <Compile Include="Delegaters.cs" />
     <Compile Include="HashVariation.cs" />
     <Compile Include="MainClass.cs" />
+    <Compile Include="Progression.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestURI.cs" />
     <Compile Include="TimeGetter.cs" />
     <Compile Include="UnSafeFeild.cs" />
   </ItemGroup>
