@@ -16,4 +16,18 @@ public class BasicMethods
 		Console.WriteLine(OutText);
 		return Console.ReadLine();
 	}
+
+	public void CalcTime(Action action)
+	{
+		var sw = new System.Diagnostics.Stopwatch();
+
+		sw.Start();
+		action.Invoke();
+		sw.Stop();
+
+		Console.WriteLine(action.Method.Name + "が処理Aにかかった時間");
+		TimeSpan ts = sw.Elapsed;
+		Console.WriteLine($"　{ts}");
+		Console.WriteLine($"　{ts.Hours}時間, {ts.Minutes}分, {ts.Seconds}秒, {ts.Milliseconds}ミリ秒");
+	}
 }
