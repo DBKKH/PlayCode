@@ -30,4 +30,22 @@ public class BasicMethods
 		Console.WriteLine($"　{ts}");
 		Console.WriteLine($"　{ts.Hours}時間, {ts.Minutes}分, {ts.Seconds}秒, {ts.Milliseconds}ミリ秒");
 	}
+
+	public void Nullable()
+	{
+		string nullcheck;
+		if (Console.ReadKey().Key==ConsoleKey.A)
+		{
+			nullcheck = "";
+		}
+		else
+		{
+			nullcheck ??= "This is null";
+		}
+	}
+
+	//public void NullChecker<TNullable>()where TNullable
+	//{
+	//	TNullable ??= 
+	//}
 }
