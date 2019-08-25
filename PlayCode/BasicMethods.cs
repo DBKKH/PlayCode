@@ -33,15 +33,15 @@ public class BasicMethods
 
 	public void Nullable()
 	{
-		string nullcheck;
-		if (Console.ReadKey().Key==ConsoleKey.A)
-		{
-			nullcheck = "";
-		}
-		else
-		{
-			nullcheck ??= "This is null";
-		}
+		//string nullcheck;
+		//if (Console.ReadKey().Key==ConsoleKey.A)
+		//{
+		//	nullcheck = "";
+		//}
+		//else
+		//{
+		//	nullcheck ??= "This is null";
+		//}
 	}
 
 	//public void NullChecker<TNullable>()where TNullable
