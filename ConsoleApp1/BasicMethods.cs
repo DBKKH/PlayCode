@@ -17,6 +17,25 @@ public class BasicMethods
 		return Console.ReadLine();
 	}
 
+	public void ContinueCheck(Action action)
+	{
+		//bool flag=false;
+
+		//if (flag == false)
+		//{
+
+		//}
+
+		action.Invoke();
+
+		Console.Write("if you wanna continue, input 'y'.");
+
+		if (Console.ReadLine()=="y")
+		{
+			action.Invoke();
+		}
+	}
+
 	public void CalcTime(Action action)
 	{
 		var sw = new System.Diagnostics.Stopwatch();
