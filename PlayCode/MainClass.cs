@@ -2,79 +2,93 @@
 using System.Collections.Generic;
 
 partial class MainClass
-{	
-	static void Main(string[] args) { Start(); }
+{
+    static Action action;
 
-	/// <summary>
-	/// Project start here.
-	/// </summary>
-	static void Start()
-	{
-		FizzBuzzStarater();
 
-		//URItester();
+    static void Main(string[] args)
+    {
+        Start();
 
-		CalcProgression();
+        action.Invoke();
 
-		//Unsafe();
+        var b = new BasicMethods();
+        b.End();
+    }
 
-		//DelegatersMethod();
+    /// <summary>
+    /// Project start here.
+    /// </summary>
+    static void Start()
+    {
 
-		//Timers();
+        //action += FizzBuzzStarater;
+        //action += URItester;
+        //action += CalcProgression;
+        action += TestDictionary;
 
-		var b = new BasicMethods();
-		b.End();
-	}
+        //action += Unsafe;
+        //action += DelegatersMethod;
+        //action += Timers;
 
-	#region OtherMethods
-	static void URItester()
-	{
-		var test = new TestURI("http://www.contoso.com/");
-		var b = new BasicMethods();
-		b.CalcTime(test.GetUriSystem);
-		b.CalcTime(test.GetUriString);
-	}
+    }
 
-	static void CalcProgression()
-	{
-		Console.WriteLine("Input number of last term in progression");
-		int last = int.Parse(Console.ReadLine());
+    #region OtherMethods
+    static void URItester()
+    {
+        var test = new TestURI("http://www.contoso.com/");
+        var b = new BasicMethods();
+        b.CalcTime(test.GetUriSystem);
+        b.CalcTime(test.GetUriString);
+    }
 
-		var ap = new Progression(last, last, out int result);
-		Console.WriteLine(result);
-		result = ap.SumNotNum(0, 90, 1);
-		Console.WriteLine(result);
-	}
-	static void FizzBuzzStarater()
-	{
-		var fizzBuzz = new FizzBuzz();
-		fizzBuzz.Checker();
-	}
+    static void CalcProgression()
+    {
+        Console.WriteLine("Input number of last term in progression");
+        int last = int.Parse(Console.ReadLine());
 
-	static void Unsafe()
-	{
-		var u = new UnSafeFeild();
-		u.Output();
-	}
+        var ap = new Progression(last, last, out int result);
+        Console.WriteLine(result);
+        result = ap.SumNotNum(0, 90, 1);
+        Console.WriteLine(result);
+    }
 
-	static void DelegatersMethod()
-	{
-		var d = new Delegaters();
-		d.CalucMethod();
-	}
+    static void TestDictionary()
+    {
+        var dic = new CalcDictionary();
+        dic.Measure();
+    }
 
-	static void Hasher()
-	{
-		var h = new HashVariation();
-		h.GetHash();
-	}
+    static void FizzBuzzStarater()
+    {
+        var fizzBuzz = new FizzBuzz();
+        fizzBuzz.Checker();
+    }
 
-	static void Timers()
-	{
-		var timeGetter = new TimeGetter();
+    static void Unsafe()
+    {
+        var u = new UnSafeFeild();
+        u.Output();
+    }
 
-		timeGetter.GetTimeZone();
-		timeGetter.Alarm();
-	}
-	#endregion
+    static void DelegatersMethod()
+    {
+        var d = new Delegaters();
+        d.CalucMethod();
+    }
+
+    static void Hasher()
+    {
+        var h = new HashVariation();
+        h.GetHash();
+    }
+
+    static void Timers()
+    {
+        var timeGetter = new TimeGetter();
+
+        timeGetter.GetTimeZone();
+        timeGetter.Alarm();
+    }
+    #endregion
 }
