@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="BasicMethods.cs" />
     <Compile Include="Delegaters.cs" />
+    <Compile Include="FizzBuzz.cs" />
     <Compile Include="HashVariation.cs" />
     <Compile Include="MainClass.cs" />
     <Compile Include="Progression.cs" />

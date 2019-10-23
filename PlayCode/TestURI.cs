@@ -23,6 +23,4 @@ class TestURI
 		//siteUri = new Uri(UriPath);
 		WebRequest wr = WebRequest.Create(UriPath);
 	}
-
-
 }

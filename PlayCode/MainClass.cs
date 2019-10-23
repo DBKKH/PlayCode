@@ -10,7 +10,9 @@ partial class MainClass
 	/// </summary>
 	static void Start()
 	{
-		URItester();
+		FizzBuzzStarater();
+
+		//URItester();
 
 		CalcProgression();
 
@@ -43,6 +45,12 @@ partial class MainClass
 		result = ap.SumNotNum(0, 90, 1);
 		Console.WriteLine(result);
 	}
+	static void FizzBuzzStarater()
+	{
+		var fizzBuzz = new FizzBuzz();
+		fizzBuzz.Checker();
+	}
+
 	static void Unsafe()
 	{
 		var u = new UnSafeFeild();
