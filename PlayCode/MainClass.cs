@@ -14,7 +14,7 @@ partial class MainClass
 
 		//URItester();
 
-		//CalcProgression();
+		CalcProgression();
 
 		//Unsafe();
 
