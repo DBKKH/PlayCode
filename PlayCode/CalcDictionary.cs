@@ -11,53 +11,50 @@ public class CalcDictionary
     }
 
     //計測用のDict
-    private Dictionary<EnumKey, int> _enumDict = new Dictionary<EnumKey, int>()
-    {
+    private Dictionary<EnumKey, int> enumDict 
+        = new Dictionary<EnumKey, int>() {
         {EnumKey.Key1, 1}, {EnumKey.Key2, 2}, {EnumKey.Key3, 3}, {EnumKey.Key4, 4}
         };
 
-    private Dictionary<int, int> _intDict = new Dictionary<int, int>(){
-    {0, 1}, {1, 2}, {2, 3}, {3, 4}
-  };
+    private Dictionary<int, int> intDict
+        = new Dictionary<int, int>(){ {0, 1}, {1, 2}, {2, 3}, {3, 4} };
 
     /// <summary>
     /// 計測を行う
     /// </summary>
     public void Measure()
     {
-        int loopCount = 1000000;
+        int loopCount = 10;
 
         CalcTime.MeasureTime(EnumAction, loopCount, true);
         CalcTime.MeasureTime(IntAction, loopCount, true);
         CalcTime.MeasureTime(EnumToIntAction, loopCount, true);
-
     }
 
-    //keyをenumにした場合の処理
+    //keyをenumにした場合
     private void EnumAction()
     {
-        int no = _enumDict[EnumKey.Key1];
-        no = _enumDict[EnumKey.Key2];
-        no = _enumDict[EnumKey.Key3];
-        no = _enumDict[EnumKey.Key4];
+        int no = enumDict[EnumKey.Key1];
+        no = enumDict[EnumKey.Key2];
+        no = enumDict[EnumKey.Key3];
+        no = enumDict[EnumKey.Key4];
     }
 
-    //keyをintにした場合の処理
+    //keyをintにした場合
     private void IntAction()
     {
-        int no = _intDict[0];
-        no = _intDict[1];
-        no = _intDict[2];
-        no = _intDict[3];
+        int no = intDict[0];
+        no = intDict[1];
+        no = intDict[2];
+        no = intDict[3];
     }
 
-    //Dictのkeyはint、入力はenumをintにした場合の処理
+    //Dictのkeyはint、入力はenumをintにした場合
     private void EnumToIntAction()
     {
-        int no = _intDict[(int)EnumKey.Key1];
-        no = _intDict[(int)EnumKey.Key2];
-        no = _intDict[(int)EnumKey.Key3];
-        no = _intDict[(int)EnumKey.Key4];
+        int no = intDict[(int)EnumKey.Key1];
+        no = intDict[(int)EnumKey.Key2];
+        no = intDict[(int)EnumKey.Key3];
+        no = intDict[(int)EnumKey.Key4];
     }
-
 }
